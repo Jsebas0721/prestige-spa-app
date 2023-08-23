@@ -13,4 +13,16 @@ code {
 }
 
 
+.app-header {
+  text-align: center;
+}
 
+.nav-bar {
+  text-align: center;
+  background-color: royalblue;
+}
+
+.active {
+  color: '#fff';
+  background: '#7600dc';
+}
