@@ -1,26 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-// const initialState = {
-//     entity: null, //user
-//     status: "idle", //loading state
-// };
+export const fetchUsers = createAsyncThunk("users/fetchUsers", () => {
+    return fetch("/users")
+    .then((resp) => resp.json())
+    .then((users) => users)
+})
 
 const usersSlice = createSlice({
     name: "users",
     initialState: {
-        entities: null,
+        entities: [],
+        status: "idle",
     },
     reducers: {
         userLogin(state, action) {
             state.entities = action.payload
         },
         userLogout(state, action){
-            console.log(action.payload)
             state.entities = action.payload
         },
     },
 });
 
-export const { userLogin, userLogout } = usersSlice.actions;
+export const { userLogin, userLogout, userUpdate } = usersSlice.actions;
 
 export default usersSlice.reducer;
