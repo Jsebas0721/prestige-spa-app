@@ -27,10 +27,12 @@ function Profile(){
                             alt="profile"
                             src={profile_picture}
                             />
-                            <p>First Name: {first_name}</p>
-                            <p>Last Name: {last_name}</p>
-                            <p>Email: {email}</p>
-                            <button onClick={() => setIsUpdating((isUpdating) => !isUpdating)}>Edit Profile</button>
+                            <div className="profile-info">
+                                <p>{first_name} {last_name}</p>
+                                <h2>Contact Information</h2>
+                                <p>Email: {email}</p>
+                            </div>
+                            <button className="edit-profile-button" onClick={() => setIsUpdating((isUpdating) => !isUpdating)}>Edit Profile</button>
                         </div>    
                     )}
                 </div>
