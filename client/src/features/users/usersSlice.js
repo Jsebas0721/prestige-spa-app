@@ -1,23 +1,34 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const fetchUsers = createAsyncThunk("users/fetchUsers", () => {
-    return fetch("/users")
+
+export const fetchMe = createAsyncThunk("user/fetchMe", () => {
+    return fetch("/me")
     .then((resp) => resp.json())
-    .then((users) => users)
-})
+    .then((user) => user);
+});
+
+const initialState= {
+    user: null,
+}
 
 const usersSlice = createSlice({
     name: "users",
-    initialState: {
-        entities: [],
-        status: "idle",
-    },
+    initialState,
     reducers: {
         userLogin(state, action) {
-            state.entities = action.payload
+           
+            state.user = action.payload
         },
-        userLogout(state, action){
-            state.entities = action.payload
+        userLogout(state){
+            state.user = null;
+        },
+        userUpdate(state, action){
+            state.user = action.payload
+        }
+    },
+    extraReducers: {
+        [fetchMe.fulfilled](state, action) {
+            state.user = action.payload;
         },
     },
 });

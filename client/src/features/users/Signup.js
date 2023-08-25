@@ -29,7 +29,7 @@ function Signup(){
       if (response.ok) {
         response.json().then((user) =>{ 
           dispatch(userLogin(user))
-          history.push(`/${user.username}/profile`)
+          history.push(`/profile/${user.username}`)
         });
       }else{
         response.json().then((errorData) => setErrors(errorData.errors));

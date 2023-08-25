@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userUpdate } from "./features/users/usersSlice";
 
 
-function UpdateProfile({user, setIsUpdating}){
+
+function UpdateProfile({setIsUpdating}){
 
     const dispatch = useDispatch();
-    
+    const user = useSelector((state) => state.users.user);
     const [profileData, setProfileData] = useState({
-        id: user.id,
         first_name: "",
         last_name: "",
         profile_picture: "",
@@ -18,7 +18,7 @@ function UpdateProfile({user, setIsUpdating}){
     
     function handleFormSubmit(e){
         e.preventDefault();
-        fetch(`/profile/${user.id}`,{
+        fetch(`/users/${user.id}`,{
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -28,8 +28,7 @@ function UpdateProfile({user, setIsUpdating}){
         .then((resp) => resp.json())
         .then((updatedProfile) => {
             console.log(updatedProfile)
-            setIsUpdating(false);
-            dispatch(userUpdate(updatedProfile));
+            dispatch(userUpdate(updatedProfile))
         })
     }
 
@@ -40,17 +39,12 @@ function UpdateProfile({user, setIsUpdating}){
         });
     }
     
-    // function handleUserUpdate(updatedProfile){
-    //     const updatedUsers = userList.map(((user)=>{
-    //         if(user.id === updatedProfile.id){
-    //             return updatedProfile;
-    //         }else{
-    //             return user;
-    //         }
-    //        }))
-    //        console.log(updatedUsers)
-    //     setUsers(updatedUsers);
-    // }
+    function handleUserUpdate(updatedProfile){
+        fetch("/users")
+        .then((resp) => resp.json())
+        .then((users) => console.log(users))
+        
+    }
 
     return(
         <form className="update-profile-form" onSubmit={handleFormSubmit}>

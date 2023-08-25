@@ -1,7 +1,6 @@
 
 import { Switch, Route } from 'react-router-dom';
 import { useDispatch, useSelector} from "react-redux";
-// import SignUp from "./SignUp";
 import Login from "./features/users/Login";
 import Signup from './features/users/Signup';
 import Header from './Header';
@@ -12,24 +11,19 @@ import Profile from './Profile';
 import { useEffect } from 'react';
 import { userLogin } from './features/users/usersSlice';
 import { useHistory } from 'react-router-dom';
+import { fetchMe } from './features/users/usersSlice';
 
 function App() {
+  const user = useSelector((state) => state.users.user);
   const dispatch = useDispatch();
   const history = useHistory();
 
-  useEffect(() =>{
-    fetch("/me").then((response) => {
-      if (response.ok) {
-        response.json().then((user) => console.log(user));
-      }else{
-        history.push("/");
-      }
-    });
+  useEffect(() => {
+   dispatch(fetchMe());
   },[dispatch])
   
-  const user = useSelector((state) => state.users.entities);
+ 
   console.log(user);
-  
 
   return (
     <div className="app">

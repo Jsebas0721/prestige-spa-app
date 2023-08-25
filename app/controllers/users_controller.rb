@@ -7,8 +7,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        user = User.find_by(id: session[:user_id])
-        render json: user
+        render json: current_user
     end
 
     def create
@@ -22,7 +21,7 @@ class UsersController < ApplicationController
     end
 
     def update
-        user = User.find_by(id: params[:id])
+        user = current_user
         if user
             user.update(user_params)
             byebug
