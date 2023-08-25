@@ -7,42 +7,45 @@ function NavBar(){
         width: "50px",
         padding: "50px",
         margin: "0 2px 2px",
-        color: "white",
     };
 
     return (
         <div className="nav-bar">
-            <NavLink
-            activeClassName="active"
-            to="/services"
-            style={linkStyles}
-            >
-            SERVICES
-            </NavLink>
-            <NavLink
-            to="/profesionals"
-            style={linkStyles} 
-            >
-            PROFESIONALS
-            </NavLink>
-            <NavLink
-            to="/locations"
-            style={linkStyles} 
-            >
-            LOCATIONS
-            </NavLink>
-            <NavLink
-            to="/signup"
-            style={linkStyles} 
-            >
-            SIGN UP
-            </NavLink>
-            <NavLink
-            to="/login"
-            style={linkStyles} 
-            >
-            LOGIN
-            </NavLink> 
+                <NavLink
+                className="nav-link"
+                to="/services"
+                style={linkStyles}
+                >
+                SERVICES
+                </NavLink>
+                <NavLink
+                className="nav-link"
+                to="/profesionals"
+                style={linkStyles} 
+                >
+                PROFESIONALS
+                </NavLink>
+                <NavLink
+                className="nav-link"
+                to="/locations"
+                style={linkStyles} 
+                >
+                LOCATIONS
+                </NavLink>
+                <NavLink
+                className="nav-link"
+                to="/signup"
+                style={linkStyles} 
+                >
+                SIGN UP
+                </NavLink>
+                <NavLink
+                className="nav-link"
+                to="/login"
+                style={linkStyles} 
+                >
+                LOGIN
+                </NavLink> 
         </div>
     )
 }

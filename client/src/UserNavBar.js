@@ -15,7 +15,6 @@ function UserNavBar(){
         width: "50px",
         padding: "50px",
         margin: "0 2px 2px",
-        color: "white",
     };
 
     function handleLogout(){
@@ -31,37 +30,42 @@ function UserNavBar(){
     return (
         <div className="nav-bar">
             <NavLink
-            activeClassName="active"
+            className="nav-link"
             to="/services"
             style={linkStyles}
             >
             SERVICES
             </NavLink>
             <NavLink
+              className="nav-link"
             to="/profesionals"
             style={linkStyles} 
             >
             PROFESIONALS
             </NavLink>
             <NavLink
+            className="nav-link"
             to="/locations"
             style={linkStyles} 
             >
             LOCATIONS
             </NavLink>
             <NavLink
+            className="nav-link"
             to="/appointments"
             style={linkStyles} 
             >
             MY APPOINTMENTS
             </NavLink>
             <NavLink
+            className="nav-link"
             to={`/profile/${user.username}`}
             style={linkStyles} 
             >
             PROFILE
             </NavLink>
             <NavLink
+            className="nav-link"
             onClick={handleLogout}
             to="/"
             style={linkStyles} 

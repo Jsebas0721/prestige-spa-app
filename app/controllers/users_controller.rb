@@ -24,7 +24,6 @@ class UsersController < ApplicationController
         user = current_user
         if user
             user.update(user_params)
-            byebug
             render json: user 
         else
             render json: {error: "You are not authorized"}, status: :unauthorized

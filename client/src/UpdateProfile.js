@@ -2,18 +2,21 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userUpdate } from "./features/users/usersSlice";
+import { useHistory } from "react-router-dom";
 
 
 
 function UpdateProfile({setIsUpdating}){
 
-    const dispatch = useDispatch();
     const user = useSelector((state) => state.users.user);
+    const {first_name, last_name, email, profile_picture} = user;
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [profileData, setProfileData] = useState({
-        first_name: "",
-        last_name: "",
-        profile_picture: "",
-        email: ""
+        first_name: first_name,
+        last_name: last_name,
+        profile_picture: profile_picture,
+        email: email
     })
     
     function handleFormSubmit(e){
@@ -27,8 +30,9 @@ function UpdateProfile({setIsUpdating}){
         })
         .then((resp) => resp.json())
         .then((updatedProfile) => {
-            console.log(updatedProfile)
+            setIsUpdating(false)
             dispatch(userUpdate(updatedProfile))
+            
         })
     }
 

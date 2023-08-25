@@ -12,17 +12,33 @@ code {
     monospace;
 }
 
-
 .app-header {
-  text-align: center;
+  font-family: 'Playfair Display', serif; 
+  font-size: 2rem; 
+  font-weight: bold;
+  color: #336699; 
+  text-align: center; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  margin-top: 20px; 
 }
 
 .nav-bar {
+  background-color: #336699; 
+  padding: 2px 0; 
+  box-shadow: 0 15px 4px rgba(0, 0, 0, 0.1); 
   text-align: center;
-  background-color: royalblue;
+  justify-content: center; 
 }
 
-.active {
-  color: '#fff';
-  background: '#7600dc';
+.nav-link {
+  
+  color: #f5f2f2; /* Dark text color for contrast */
+  font-weight: bold;
+  transition: color 0.5s ease; /* Smooth color transition */
 }
+
+.nav-link:hover {
+  color: #4893df; /* A soothing accent color on hover */
+}
+

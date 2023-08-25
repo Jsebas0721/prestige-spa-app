@@ -16,15 +16,23 @@ function Profile(){
         <div>
             {first_name && email ? (
                 <div>
-                    <h1>PROFILE</h1>
-                    <img
-                    alt="profile"
-                    src={profile_picture}
-                    />
-                    <p>First Name: {first_name}</p>
-                    <p>Last Name: {last_name}</p>
-                    <p>Email: {email}</p>
-                    <button onClick={() => setIsUpdating((isUpdating) => !isUpdating)}>Edit Profile</button>
+                    {isUpdating ? (
+                        <UpdateProfile
+                            setIsUpdating={setIsUpdating}
+                        />
+                    ):(
+                        <div>
+                            <h1>PROFILE</h1>
+                            <img
+                            alt="profile"
+                            src={profile_picture}
+                            />
+                            <p>First Name: {first_name}</p>
+                            <p>Last Name: {last_name}</p>
+                            <p>Email: {email}</p>
+                            <button onClick={() => setIsUpdating((isUpdating) => !isUpdating)}>Edit Profile</button>
+                        </div>    
+                    )}
                 </div>
             ) : (
                 <div>
