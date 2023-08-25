@@ -11,6 +11,13 @@ function NavBar(){
 
     return (
         <div className="nav-bar">
+            <NavLink
+             className="nav-link"
+             to="/home"
+             style={linkStyles}
+            >
+            HOME
+            </NavLink>
                 <NavLink
                 className="nav-link"
                 to="/services"
@@ -23,7 +30,7 @@ function NavBar(){
                 to="/profesionals"
                 style={linkStyles} 
                 >
-                PROFESIONALS
+                PROFESSIONALS
                 </NavLink>
                 <NavLink
                 className="nav-link"

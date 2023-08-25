@@ -30,6 +30,13 @@ function UserNavBar(){
     return (
         <div className="nav-bar">
             <NavLink
+             className="nav-link"
+             to="/home"
+             style={linkStyles}
+            >
+            HOME
+            </NavLink>
+            <NavLink
             className="nav-link"
             to="/services"
             style={linkStyles}
@@ -41,7 +48,7 @@ function UserNavBar(){
             to="/profesionals"
             style={linkStyles} 
             >
-            PROFESIONALS
+            PROFESSIONALS
             </NavLink>
             <NavLink
             className="nav-link"

@@ -36,7 +36,7 @@ function Login(){
 
     return (
       <form className="login" onSubmit={handleSubmit}>
-        <h1>Login:</h1>
+        <h1>LOGIN</h1>
         <label>Username: </label>
         <input
           type="text"
@@ -58,7 +58,7 @@ function Login(){
             <li key={error}>{error}</li>
           </ul>
         )}
-        <button type="submit">Login</button>
+        <button type="submit" className="login-submit">Login</button>
       </form>
     )
 }

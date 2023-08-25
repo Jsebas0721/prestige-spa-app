@@ -21,7 +21,7 @@ function Profile(){
                             setIsUpdating={setIsUpdating}
                         />
                     ):(
-                        <div>
+                        <div className="profile-container">
                             <h1>PROFILE</h1>
                             <img
                             alt="profile"

@@ -39,7 +39,7 @@ function Signup(){
 
     return(
       <form className="signup" onSubmit={handleSubmit}>
-         <h1>Sign Up</h1>
+         <h1>SIGN UP</h1>
         <label>Username:</label>
         <input
           type="text"
@@ -71,7 +71,7 @@ function Signup(){
             ))}
           </ul>
         )}
-        <button type="submit">Sign Up</button>
+        <button type="submit" className="signup-submit">Sign Up</button>
       </form>
     )
 }

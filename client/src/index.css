@@ -25,14 +25,14 @@ code {
 
 .nav-bar {
   background-color: #336699; 
-  padding: 2px 0; 
+  padding: 10px 0; 
   box-shadow: 0 15px 4px rgba(0, 0, 0, 0.1); 
   text-align: center;
   justify-content: center; 
 }
 
 .nav-link {
-  
+
   color: #f5f2f2; /* Dark text color for contrast */
   font-weight: bold;
   transition: color 0.5s ease; /* Smooth color transition */
@@ -40,5 +40,89 @@ code {
 
 .nav-link:hover {
   color: #4893df; /* A soothing accent color on hover */
+}
+
+.login {
+  width: 300px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgba(45, 89, 146, 0.3); /* Semi-transparent white background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.login h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1px;
+  margin-bottom: 10px;
+  
+}
+
+.login input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.login-submit {
+  width: 107%;
+  padding: 10px;
+  background-color: #336699;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.7s ease;
+}
+
+.login-submit:hover{
+  background-color: #4897e6; /* A slightly darker shade on hover */
+}
+
+.signup {
+  width: 300px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgba(45, 89, 146, 0.3); /* Semi-transparent white background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.signup h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1px;
+  margin-bottom: 10px;
+  
+}
+
+.signup input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.signup-submit {
+  width: 107%;
+  padding: 10px;
+  background-color: #336699;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.7s ease;
+}
+
+.signup-submit:hover{
+  background-color: #4897e6; /* A slightly darker shade on hover */
 }
 
