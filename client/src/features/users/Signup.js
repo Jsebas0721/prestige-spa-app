@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { userLogin } from "./usersSlice";
-import { useHistory} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+
 
 function Signup(){
 
@@ -11,7 +12,7 @@ function Signup(){
   const [errors, setErrors]= useState([]);
 
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -29,7 +30,7 @@ function Signup(){
       if (response.ok) {
         response.json().then((user) =>{ 
           dispatch(userLogin(user))
-          history.push(`/profile/${user.username}`)
+          navigate(`/profile/${user.username}`);
         });
       }else{
         response.json().then((errorData) => setErrors(errorData.errors));

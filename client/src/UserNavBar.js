@@ -2,14 +2,14 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { userLogout } from "./features/users/usersSlice";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function UserNavBar(){
 
     const user = useSelector((state) => state.users.user);
     const dispatch = useDispatch();
-    const history = useHistory();
+    const navigate = useNavigate();
    
     const linkStyles = {
         width: "50px",
@@ -21,7 +21,7 @@ function UserNavBar(){
         fetch("/logout", { method: "DELETE" }).then((response) => {
             if (response.ok) {
               dispatch(userLogout(null));
-              history.push("/");
+              navigate("/home")
             }
         });
     }

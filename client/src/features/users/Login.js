@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { userLogin } from "./usersSlice";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function Login(){
@@ -11,7 +11,7 @@ function Login(){
     const [error, setError]= useState({});
     
     const dispatch = useDispatch();
-    const history = useHistory();
+    const navigate = useNavigate();
     
     function handleSubmit(e) {
       e.preventDefault();
@@ -26,7 +26,7 @@ function Login(){
           resp.json().then((user) => {
             console.log(user);
             dispatch(userLogin(user))
-            history.push("/")
+            navigate("/home");
           });    
         }else{
           resp.json().then((errorData) => setError(errorData.error)); 

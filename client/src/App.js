@@ -1,5 +1,5 @@
 
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector} from "react-redux";
 import Login from "./features/users/Login";
 import Signup from './features/users/Signup';
@@ -9,14 +9,11 @@ import UserNavBar from './UserNavBar';
 import Services from './Services';
 import Profile from './Profile';
 import { useEffect } from 'react';
-import { userLogin } from './features/users/usersSlice';
-import { useHistory } from 'react-router-dom';
 import { fetchMe } from './features/users/usersSlice';
 
 function App() {
   const user = useSelector((state) => state.users.user);
   const dispatch = useDispatch();
-  const history = useHistory();
 
   useEffect(() => {
    dispatch(fetchMe());
@@ -32,26 +29,18 @@ function App() {
         <div>
           <UserNavBar/>
           <h1>Welcome User: {user.username}</h1>
-          <Switch>
-            <Route exact path={`/profile/${user.username}`}>
-              <Profile/>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path={`/profile/${user.username}`} element={<Profile/>}/>
+          </Routes>
         </div>
       ) : (
         <div>
           <NavBar/>
-          <Switch>
-            <Route exact path="/login">
-              <Login/>
-            </Route>
-            <Route exact path="/signup">
-              <Signup/>
-            </Route>
-            <Route exact path="/services">
-              <Services/>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path="/login" element={<Login/>}/>
+            <Route exact path="/signup" element={<Signup/>}/>
+            <Route exact path="/services" element={<Services/>}/>
+          </Routes>
         </div>
       )}
     </div>
