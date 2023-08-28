@@ -10,6 +10,7 @@ import Services from './Services';
 import Profile from './Profile';
 import { useEffect } from 'react';
 import { fetchMe } from './features/users/usersSlice';
+import Home from './Home';
 
 function App() {
   const user = useSelector((state) => state.users.user);
@@ -37,6 +38,7 @@ function App() {
         <div>
           <NavBar/>
           <Routes>
+            <Route exact path="/Home" element={<Home/>}/>
             <Route exact path="/login" element={<Login/>}/>
             <Route exact path="/signup" element={<Signup/>}/>
             <Route exact path="/services" element={<Services/>}/>
