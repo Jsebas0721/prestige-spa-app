@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userUpdate } from "./features/users/usersSlice";
+import { userUpdate } from "./usersSlice";
 
 
 
@@ -45,7 +45,7 @@ function UpdateProfile({setIsUpdating}){
         <form className="update-profile-form" onSubmit={handleFormSubmit}>
             <div className="update-picture-div">
                 <label>Profile Picture:</label>
-                <img alt="profile picture" src={profileData.profile_picture} className="profile-picture"/>
+                <img alt="profile" src={profileData.profile_picture} className="profile-picture"/>
                 <input
                 type="text"
                 name="profile_picture"

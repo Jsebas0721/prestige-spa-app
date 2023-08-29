@@ -26,7 +26,7 @@ function Login(){
           resp.json().then((user) => {
             console.log(user);
             dispatch(userLogin(user))
-            navigate("/home");
+            navigate("/services");
           });    
         }else{
           resp.json().then((errorData) => setError(errorData.error)); 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { userLogout } from "./features/users/usersSlice";
+import { userLogout } from "./usersSlice";
 import { useNavigate } from "react-router-dom";
 
 function UserNavBar() {

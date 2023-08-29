@@ -23,9 +23,9 @@ function Services() {
         <span className="service-duration">{service.duration}</span>
         <span className="service-cost">{service.cost}</span>
       </div>
-      <a href="#" className="book-now-link">
+      <button className="book-now-link">
         Book Now
-      </a>
+      </button>
     </div>
   ));
 
