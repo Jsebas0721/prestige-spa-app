@@ -10,7 +10,7 @@ function NavBar() {
 
   return (
     <div className="nav-bar">
-      <NavLink className="nav-link" to="/home" style={linkStyles}>
+      <NavLink className="nav-link" to="/" style={linkStyles}>
         HOME
       </NavLink>
       <NavLink className="nav-link" to="/signup" style={linkStyles}>

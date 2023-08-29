@@ -44,6 +44,7 @@ function UpdateProfile({setIsUpdating}){
     return(
         <form className="update-profile-form" onSubmit={handleFormSubmit}>
             <div className="update-picture-div">
+                <label>Profile Picture:</label>
                 <img alt="profile picture" src={profileData.profile_picture} className="profile-picture"/>
                 <input
                 type="text"
@@ -51,7 +52,6 @@ function UpdateProfile({setIsUpdating}){
                 value={profileData.profile_picture}
                 onChange={handleChange}
                 />
-                <label className="upload-picture-button">CHANGE PICTURE</label>
             </div>
            <label>First Name: </label>
            <input

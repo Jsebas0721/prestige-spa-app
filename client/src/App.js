@@ -6,7 +6,7 @@ import Signup from './features/users/Signup';
 import Header from './Header';
 import NavBar from './NavBar';
 import UserNavBar from './UserNavBar';
-import Services from './Services';
+import Services from './features/services/Services';
 import Profile from './Profile';
 import { useEffect } from 'react';
 import { fetchMe } from './features/users/usersSlice';
@@ -32,16 +32,16 @@ function App() {
           <h1>Welcome User: {user.username}</h1>
           <Routes>
             <Route exact path={`/profile/${user.username}`} element={<Profile/>}/>
+            <Route exact path="/services" element={<Services/>}/>
           </Routes>
         </div>
       ) : (
         <div>
           <NavBar/>
           <Routes>
-            <Route exact path="/Home" element={<Home/>}/>
+            <Route exact path="/" element={<Home/>}/>
             <Route exact path="/login" element={<Login/>}/>
             <Route exact path="/signup" element={<Signup/>}/>
-            <Route exact path="/services" element={<Services/>}/>
           </Routes>
         </div>
       )}
