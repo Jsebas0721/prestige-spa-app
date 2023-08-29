@@ -22,6 +22,11 @@ code {
   letter-spacing: 2px; 
   margin-top: 20px; 
 }
+.welcome-message{
+  text-align: center;
+  
+  font-size: 8px;
+}
 
 .nav-bar {
   background-color: #336699; 
@@ -313,4 +318,76 @@ code {
 
 .cta-button:hover {
   background-color: #4897e6;
+}
+
+
+.service-container {
+
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.service-container h1{
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+/* Styling for each service card */
+.service-card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.service-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service-type {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.service-description {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #4d4d4d;
+}
+
+.service-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.service-duration {
+  color: #336699; 
+}
+
+.service-cost {
+  font-weight: bold;
+}
+
+/* Styling for the link to booking page */
+.book-now-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #336699;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-link:hover {
+  background-color: #4897e6; 
 }

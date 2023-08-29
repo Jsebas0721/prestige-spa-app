@@ -53,6 +53,7 @@ function UserNavBar() {
       >
         LOG OUT
       </NavLink>
+    
     </div>
   );
 }

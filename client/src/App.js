@@ -29,7 +29,9 @@ function App() {
       {user ? (
         <div>
           <UserNavBar/>
-          <h1>Welcome User: {user.username}</h1>
+          <div className='welcome-message'>
+            <h1>Welcome {user.first_name}!</h1>
+          </div>
           <Routes>
             <Route exact path={`/profile/${user.username}`} element={<Profile/>}/>
             <Route exact path="/services" element={<Services/>}/>
