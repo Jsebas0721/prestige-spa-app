@@ -29,7 +29,7 @@ function UserNavBar() {
       <NavLink className="nav-link" to="/services" style={linkStyles}>
         SERVICES
       </NavLink>
-      <NavLink className="nav-link" to="/profesionals" style={linkStyles}>
+      <NavLink className="nav-link" to="/professionals" style={linkStyles}>
         PROFESSIONALS
       </NavLink>
       <NavLink className="nav-link" to="/locations" style={linkStyles}>
