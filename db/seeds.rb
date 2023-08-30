@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Service.destroy_all
+Professional.destroy_all
+Location.destroy_all
 
 user1 = User.create(username: "test1234", password: "test1234", first_name: "", last_name: "", email: "" , profile_picture: "");
 
@@ -76,3 +78,9 @@ Professional.create(name: "Isabella Clark",
     service_type: "Facials");
 
 puts "Professionals Seeded!"
+
+Location.create(address: "123 Main Street", city: "Albany", state: "NY", postal_code: "12345", country: "United States", phone: "(555) 123-4567")
+Location.create(address: "456 Wellness Avenue", city: "New York", state: "NY", postal_code: "10001", country: "United States", phone: "(631) 987-6543")
+Location.create(address: "79 Serenity Lane", city: "Buffalo", state: "NY", postal_code: "14202", country: "United States", phone: "(555) 789-0123")
+
+puts "Locatiions Seeded!"

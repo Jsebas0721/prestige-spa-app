@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   #professionals routes
   get "/professionals", to: "professionals#index"
+
+  #locaitons routes
+  get "/locations", to: "locations#index"
   
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
