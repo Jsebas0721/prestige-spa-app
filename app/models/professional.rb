@@ -1,2 +1,3 @@
 class Professional < ApplicationRecord
+    
 end

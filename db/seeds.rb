@@ -19,3 +19,60 @@ Service.create(service_name: "Facial Renewal",description: "A rejuvenating facia
 Service.create(service_name: "Body Scrub", description: "Exfoliating treatment using natural scrubs to remove dead skin cells and reveal softer skin.",duration: "60 minutes",cost: "$75", service_type: "Body Treatment")
 
 puts "Services Seeded!"
+
+Professional.create(
+    name: "Jessica Anderson", 
+    gender: "Female", 
+    picture: "https://img.freepik.com/free-photo/portrait-dentist-standing-with-arms-crossed_107420-73978.jpg?w=2000",
+    about: "With over 7 years of experience in the wellness industry, Jessica is a skilled therapist dedicated to helping clients achieve relaxation and rejuvenation. Her soothing touch and attention to detail create a serene atmosphere that promotes total well-being.", 
+    service_type: "Massage");
+
+Professional.create(name: "Michael Williams", 
+    gender: "Male", 
+    picture: "https://riverviewphotography.com/wp-content/uploads/2020/03/Male-Business-Headshot-Riverview-Photography-1.jpg",
+    about: "Michael is a highly trained specialist with a passion for body treatments. His extensive knowledge of herbal therapies and exfoliation techniques allows him to create custom treatments tailored to each client's unique needs, leaving them feeling refreshed and revitalized.", 
+    service_type: "Body Treatment");
+
+Professional.create(name: "Emily Roberts", 
+    gender: "Female", 
+    picture: "https://img.freepik.com/free-photo/beautician-woman-clinic_23-2148878877.jpg?w=360", 
+    about: "As a licensed esthetician, Emily is committed to enhancing her clients' natural beauty. Her expertise in skincare and deep cleansing facials helps clients achieve radiant and glowing skin. With a gentle touch and a wealth of knowledge, Emily ensures a pampering experience like no other.", 
+    service_type: "Facials");
+
+Professional.create(name: "David Lee", 
+    gender: "Male", 
+    picture: "https://skinmedspa.com/wp-content/uploads/2016/10/guy5-e1475694983441.jpg", 
+    about: "With a background in holistic therapies, David brings a balanced approach to his massage sessions. His strong hands and intuitive touch alleviate tension and promote relaxation. Whether it's a deep tissue massage or a soothing Swedish massage, David's techniques are tailored to each client's preferences.", 
+    service_type: "Massage");
+
+Professional.create(name: "Sophia Nguyen", 
+    gender: "Female", 
+    picture: "https://img.freepik.com/free-photo/beautician-woman-clinic-with-tablet_23-2148878886.jpg", 
+    about: " Sophia's passion for natural ingredients and healing rituals shines through in her body treatments. Drawing from her international spa experiences, she offers an array of exfoliating scrubs and nourishing wraps that transport clients to a world of serenity and self-care.", 
+    service_type: "Body Treatment");
+
+Professional.create(name: "Daniel Smith", 
+    gender: "Male", 
+    picture: "https://i.pinimg.com/originals/13/03/1f/13031f78b55de893567abe78f8f23dff.jpg", 
+    about: "With a commitment to skin health, Daniel specializes in advanced facial treatments. His in-depth knowledge of skincare technology and personalized consultation approach ensures that clients receive tailored solutions for their specific concerns, leaving their skin revitalized and youthful.", 
+    service_type: "Facials");
+
+Professional.create(name: "Olivia Brown", 
+    gender: "Female", 
+    picture: "https://media.istockphoto.com/id/1280387272/photo/woman-cosmetologist-or-dermatologist-looking-at-camera-in-beauty-spa-salon-room.jpg?s=612x612&w=0&k=20&c=hRlG6gAZpwg-47z8Gl07zkaKIYIR4gL15N2xvOy9icM=", 
+    about: "Olivia's soothing presence and extensive massage training make her a favorite among clients seeking relaxation. Her expertise in aromatherapy and hot stone massage techniques melts away stress, promoting a sense of tranquility and balance.", 
+    service_type: "Massage");
+
+Professional.create(name: "Ethan Martinez", 
+    gender: "Male", 
+    picture: "https://thumbs.dreamstime.com/b/portrait-male-masseur-specialist-spa-uniform-portrait-male-masseur-specialist-spa-center-141100316.jpg", 
+    about: "With a focus on holistic wellness, Ethan offers body treatments that nourish both body and mind. His commitment to using organic ingredients and traditional techniques ensures that clients experience a harmonious blend of rejuvenation and relaxation.", 
+    service_type: "Body Treatment");
+
+Professional.create(name: "Isabella Clark", 
+    gender: "Female", 
+    picture: "https://img.freepik.com/premium-photo/portrait-young-cosmetologist_506452-21384.jpg?w=360", 
+    about: "Isabella's passion for skincare and beauty is evident in her facials. Her extensive training in European skincare methods and luxurious facial massage techniques leave clients feeling pampered and glowing, with a renewed sense of self-care.", 
+    service_type: "Facials");
+
+puts "Professionals Seeded!"
