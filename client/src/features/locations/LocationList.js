@@ -19,7 +19,7 @@ function LocationList() {
   ))
 
   return (
-    <div>
+    <div className="lol">
       <h1>Discover Our Locations..</h1>
       <ul className="location-container">{locationCard}</ul>
     </div>

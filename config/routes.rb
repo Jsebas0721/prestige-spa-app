@@ -21,6 +21,9 @@ Rails.application.routes.draw do
 
   #locaitons routes
   get "/locations", to: "locations#index"
+
+  #appointments routes
+  resources :appointments, only: [:index, :create, :update, :destroy]
   
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

@@ -2,12 +2,12 @@ import React from "react";
 
 function Professional({ professional }) {
 
-  const { id, name, picture, gender, about, service_type } = professional;
+  const { name, picture, gender, about, service_type } = professional;
     console.log()
   return (
     <div className="professional-card">
       <div className="professional-image">
-        <img src={picture} alt="Professional's Image" />
+        <img src={picture} alt="Professional's Pic" />
       </div>
       <div className="professional-details">
         <h2 className="professional-name">{name}</h2>
