@@ -1,4 +1,4 @@
-class AddPictureToProffesionals < ActiveRecord::Migration[6.1]
+class AddPictureToProfessionals < ActiveRecord::Migration[6.1]
   def change
     add_column :professionals, :picture, :string
   end
