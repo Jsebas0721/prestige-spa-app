@@ -12,7 +12,7 @@ Location.destroy_all
 Appointment.destroy_all
 
 user1 = User.create(username: "test1234", password: "test1234", first_name: "Juan Sebastian", last_name: "Medina Lopez", email: "sebastianlopez_21@hotmail.com" , profile_picture: "https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY=");
-
+user2 = User.create(username: "sebas1234", password: "sebas1234", first_name: "Sebastian", last_name: "Medina", email: "sebastianlopez_21@gmail.com" , profile_picture: "https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY=");
 puts "Users Seeded!"
 
 serv1 = Service.create(service_name: "Swedish Massage", description: "A classic massage technique that uses long, flowing strokes to promote relaxation and ease tension.", duration: "60 minutes", cost: "$80", service_type: "Massage");
@@ -95,7 +95,7 @@ loc3 = Location.create(address: "79 Serenity Lane", city: "Buffalo", state: "NY"
 puts "Locatiions Seeded!"
 
 ap1 = Appointment.create(service_name: serv1.service_name, service_type: serv1.service_type, date_time: "", duration: serv1.duration, location: loc1.address, user_id: user1.id, professional_id: pro1.id);
-# Appoinment.create(service_name: "", service_type: "", date_time: "", duration: "", location: "", user_id: "", specialist_id: "");
+ap2 = Appointment.create(service_name: serv5.service_name, service_type: serv5.service_type, date_time: "", duration: serv5.duration, location: loc3.address, user_id: user2.id, professional_id: pro8.id);
 # Appoinment.create(service_name: "", service_type: "", date_time: "", duration: "", location: "", user_id: "", specialist_id: "");
 
 puts "Appointments Seeded!"

@@ -13,6 +13,7 @@ import { fetchMe } from './features/users/usersSlice';
 import Home from './Home';
 import ProfessionalList from './features/professionals/ProfessionalList';
 import LocationList from './features/locations/LocationList';
+import AppointmentList from './features/appointments/AppointmentList';
 
 function App() {
   const user = useSelector((state) => state.users.user);
@@ -38,6 +39,7 @@ function App() {
             <Route exact path="/services" element={<Services/>}/>
             <Route exact path="/professionals" element={<ProfessionalList/>}/>
             <Route exact path='/locations' element={<LocationList/>}/>
+            <Route exact path='/appointments' element={<AppointmentList/>}/>
           </Routes>
         </div>
       ) : (
