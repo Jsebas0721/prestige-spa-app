@@ -10,7 +10,7 @@ Service.destroy_all
 Professional.destroy_all
 Location.destroy_all
 
-user1 = User.create(username: "test1234", password: "test1234", first_name: "", last_name: "", email: "" , profile_picture: "");
+user1 = User.create(username: "test1234", password: "test1234", first_name: "Juan Sebastian", last_name: "Medina Lopez", email: "sebastianlopez_21@hotmail.com" , profile_picture: "https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.jpg?s=612x612&w=0&k=20&c=QjebAlXBgee05B3rcLDAtOaMtmdLjtZ5Yg9IJoiy-VY=");
 
 puts "Users Seeded!"
 
