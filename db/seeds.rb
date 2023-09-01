@@ -88,9 +88,9 @@ pro9 = Professional.create(
 
 puts "Professionals Seeded!"
 
-loc1 = Location.create(address: "123 Main Street", city: "Albany", state: "NY", postal_code: "12345", country: "United States", phone: "(555) 123-4567")
-loc2 = Location.create(address: "456 Wellness Avenue", city: "New York", state: "NY", postal_code: "10001", country: "United States", phone: "(631) 987-6543")
-loc3 = Location.create(address: "79 Serenity Lane", city: "Buffalo", state: "NY", postal_code: "14202", country: "United States", phone: "(555) 789-0123")
+loc1 = Location.create(name: "PRESTIGE Albany", address: "123 Main Street", city: "Albany", state: "NY", postal_code: "12345", country: "United States", phone: "(555) 123-4567")
+loc2 = Location.create(name: "PRESTIGE New York City", address: "456 Wellness Avenue", city: "New York", state: "NY", postal_code: "10001", country: "United States", phone: "(631) 987-6543")
+loc3 = Location.create(name: "PRESTIGE Buffalo", address: "79 Serenity Lane", city: "Buffalo", state: "NY", postal_code: "14202", country: "United States", phone: "(555) 789-0123")
 
 puts "Locatiions Seeded!"
 

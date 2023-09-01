@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProfessionals } from "./professionalsSlice";
+import React from "react";
+import { useSelector } from "react-redux";
+
 import Professional from "./Professional";
 
 function ProfessionalList() {
-  const dispatch = useDispatch();
-  const professionals = useSelector(
-    (state) => state.professionals.professionals
-  );
-  useEffect(() => {
-    dispatch(fetchProfessionals());
-  }, [dispatch]);
+  const professionals = useSelector((state) => state.professionals.professionals);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchProfessionals());
+  // }, [dispatch]);
 
-  console.log(professionals);
+ 
 
   const profesionalCard = professionals.map((pro) => (
     <Professional key={pro.id} professional={pro} />

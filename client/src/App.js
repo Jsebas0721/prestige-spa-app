@@ -14,6 +14,10 @@ import Home from './Home';
 import ProfessionalList from './features/professionals/ProfessionalList';
 import LocationList from './features/locations/LocationList';
 import AppointmentList from './features/appointments/AppointmentList';
+import AppointmentForm from './features/appointments/AppointmentForm';
+import { fetchLocations } from './features/locations/locationsSlice';
+import { fetchProfessionals } from './features/professionals/professionalsSlice';
+import { fetchServices } from './features/services/servicesSlice';
 
 function App() {
   const user = useSelector((state) => state.users.user);
@@ -21,6 +25,9 @@ function App() {
 
   useEffect(() => {
    dispatch(fetchMe());
+   dispatch(fetchServices());
+   dispatch(fetchLocations());
+   dispatch(fetchProfessionals());
   },[dispatch])
   
  
@@ -40,6 +47,7 @@ function App() {
             <Route exact path="/professionals" element={<ProfessionalList/>}/>
             <Route exact path='/locations' element={<LocationList/>}/>
             <Route exact path='/appointments' element={<AppointmentList/>}/>
+            <Route exact path="/appointments/new" element={<AppointmentForm/>}/>
           </Routes>
         </div>
       ) : (

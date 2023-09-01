@@ -469,9 +469,10 @@ code {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.location-address {
+.location-name {
   font-size: 1.5rem;
   margin-bottom: 5px;
+  font-weight: bolder;
 }
 
 .location-details{
@@ -491,6 +492,7 @@ code {
 }
 
 .appointment-container {
+  text-align: center;
   max-width: 800px;
   margin: 0 auto;
   background-color: #fff;
@@ -499,39 +501,41 @@ code {
   padding: 20px;
 }
 
-.appointment {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #e0e0e0;
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.appointment-details {
-  flex-grow: 1;
-  margin-right: 20px;
+.appointments-table th, .appointments-table td {
+  padding: 12px;
+  text-align: left;
 }
-.appointment-service {
-  color: #666;
+
+.appointments-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
 
 .appointment-actions {
   display: flex;
-  align-items: center;
+  justify-content: space-around;
+  align-items:center;
 }
 
 .appointment-actions button {
   border: none;
-  background-color: transparent;
+  padding: 5px 10px;
   cursor: pointer;
-  font-size: 1rem;
-  color: #007bff;
-  margin-left: 10px;
-  transition: color 0.3s ease;
+  background-color:#336699;
+  color: white;
+  border-radius: 3px;
+  transition: background-color 0.2s;
 }
 
 .appointment-actions button:hover {
-  color: #0056b3;
+  background-color: #4897e6; 
 }
 
 .delete-button {
@@ -540,4 +544,64 @@ code {
 
 .modify-button {
   color: #00cc66;
+}
+
+.new-appointment-button{
+  padding: 10px 20px;
+  background-color: #336699;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.new-appointment-button:hover{
+  background-color: #4897e6; 
+}
+
+.appointment-form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.appointment-form select,
+.appointment-form input[type="date"],
+.appointment-form input[type="time"],
+.appointment-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Button styling */
+.button-container {
+  text-align: center;
+}
+
+.appointment-form button {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color:#336699;
+  color: white;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.appointment-form button:hover {
+  background-color: #2980b9;
 }

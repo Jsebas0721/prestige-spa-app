@@ -3,11 +3,12 @@ import React from "react";
 function Location({location}){
 
     console.log(location)
-    const{address, city, state, postal_code, country, phone} = location
+    const{name, address, city, state, postal_code, country, phone} = location
     return (
         <div className="location-card">
             <div className="location-details">
-                <p className="location-address">{address}</p>
+                <p className="location-name">{name}</p>
+                <p>{address}</p>
                 <p>{city} {state}</p>
                 <p>{postal_code}</p>
                 <p>{country}</p><hr/>         
