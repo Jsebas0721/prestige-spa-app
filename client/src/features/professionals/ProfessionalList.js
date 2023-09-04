@@ -1,14 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
-
-import Professional from "./Professional";
+import { useSelector, useDispatch } from "react-redux";
+import {fetchProfessionals} from "./professionalsSlice"
+import { useEffect } from "react";
+import Professional from "./Professional"
 
 function ProfessionalList() {
   const professionals = useSelector((state) => state.professionals.professionals);
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchProfessionals());
-  // }, [dispatch]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProfessionals());
+  }, [dispatch]);
 
  
 

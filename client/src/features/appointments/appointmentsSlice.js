@@ -1,4 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+
+export const fetchAppointments = createAsyncThunk("appointments/fetchAppointments" , () =>{
+    return fetch("/appointments")
+    .then((resp) => resp.json())
+    .then(appointmnents => appointmnents)
+})
 
 
 const initialState = {
@@ -9,20 +15,24 @@ const appointmentsSlice = createSlice({
     name: "appointments",
     initialState,
     reducers: {
-        setAppointments(state, action){
-
+        addAppointment(state, action){
+            console.log(action.payload);
+            state.appointmentList.push(action.payload);
         }
 
     },
-    // extraReducers: {
-    //     [fetchMe.fulfilled](state, action) {
-    //         state.appointments = action.payload;
-    //     },
-    // },
-
+    extraReducers: {
+        [fetchAppointments.pending](state){
+            state.status = "loading";
+        },
+        [fetchAppointments.fulfilled](state, action) {
+            state.appointmentList = action.payload;
+            state.status = "idle";
+        },
+    },
 
 });
 
-export const { setAppointments } = appointmentsSlice.actions;
+export const { setAppointments, addAppointment } = appointmentsSlice.actions;
 export default appointmentsSlice.reducer;
 

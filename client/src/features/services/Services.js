@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { fetchServices } from "./servicesSlice";
 
 
 function Services() {
   const services = useSelector((state) => state.services.services);
 
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchServices());
-  // }, [dispatch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchServices());
+  }, [dispatch]);
 
 
   const serviceCard = services.map((service) => (

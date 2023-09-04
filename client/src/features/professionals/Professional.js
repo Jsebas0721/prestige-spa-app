@@ -1,6 +1,6 @@
 import React from "react";
 
-function Professional({ professional }) {
+function Professional({ professional}) {
 
   const { name, picture, gender, about, service_type } = professional;
     console.log()

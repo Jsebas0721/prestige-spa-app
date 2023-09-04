@@ -24,10 +24,10 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-   dispatch(fetchMe());
-   dispatch(fetchServices());
-   dispatch(fetchLocations());
-   dispatch(fetchProfessionals());
+    dispatch(fetchMe());
+    dispatch(fetchProfessionals());
+    dispatch(fetchServices());
+    dispatch(fetchLocations());
   },[dispatch])
   
  

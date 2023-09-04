@@ -28,7 +28,8 @@ pro1 = Professional.create(
     picture: "https://img.freepik.com/free-photo/portrait-dentist-standing-with-arms-crossed_107420-73978.jpg?w=2000",
     gender: "Female", 
     about: "With over 7 years of experience in the wellness industry, Jessica is a skilled therapist dedicated to helping clients achieve relaxation and rejuvenation. Her soothing touch and attention to detail create a serene atmosphere that promotes total well-being.", 
-    service_type: "Massage");
+    service_type: "Massage",
+    );
 
 pro2 = Professional.create(
     name: "Michael Williams", 
@@ -42,7 +43,7 @@ pro3 = Professional.create(
     picture: "https://img.freepik.com/free-photo/beautician-woman-clinic_23-2148878877.jpg?w=360", 
     gender: "Female", 
     about: "As a licensed esthetician, Emily is committed to enhancing her clients' natural beauty. Her expertise in skincare and deep cleansing facials helps clients achieve radiant and glowing skin. With a gentle touch and a wealth of knowledge, Emily ensures a pampering experience like no other.", 
-    service_type: "Facials");
+    service_type: "Facial");
 
 pro4 =Professional.create(
     name: "David Lee",
@@ -63,7 +64,7 @@ pro6 = Professional.create(
     picture: "https://i.pinimg.com/originals/13/03/1f/13031f78b55de893567abe78f8f23dff.jpg",  
     gender: "Male", 
     about: "With a commitment to skin health, Daniel specializes in advanced facial treatments. His in-depth knowledge of skincare technology and personalized consultation approach ensures that clients receive tailored solutions for their specific concerns, leaving their skin revitalized and youthful.", 
-    service_type: "Facials");
+    service_type: "Facial");
 
 pro7 = Professional.create(
     name: "Olivia Brown",
@@ -84,7 +85,7 @@ pro9 = Professional.create(
     picture: "https://img.freepik.com/premium-photo/portrait-young-cosmetologist_506452-21384.jpg?w=360", 
     gender: "Female", 
     about: "Isabella's passion for skincare and beauty is evident in her facials. Her extensive training in European skincare methods and luxurious facial massage techniques leave clients feeling pampered and glowing, with a renewed sense of self-care.", 
-    service_type: "Facials");
+    service_type: "Facial");
 
 puts "Professionals Seeded!"
 
@@ -94,8 +95,8 @@ loc3 = Location.create(name: "PRESTIGE Buffalo", address: "79 Serenity Lane", ci
 
 puts "Locatiions Seeded!"
 
-ap1 = Appointment.create(service_name: serv1.service_name, service_type: serv1.service_type, date_time: "", duration: serv1.duration, location: loc1.address, user_id: user1.id, professional_id: pro1.id);
-ap2 = Appointment.create(service_name: serv5.service_name, service_type: serv5.service_type, date_time: "", duration: serv5.duration, location: loc3.address, user_id: user2.id, professional_id: pro8.id);
+ap1 = Appointment.create(service_name: serv1.service_name, service_type: serv1.service_type, date: "2023-11-08",time: "11:00 AM", duration: serv1.duration, cost: serv1.cost, location: loc1.name, user_id: user1.id, professional_id: pro1.id);
+ap2 = Appointment.create(service_name: serv5.service_name, service_type: serv5.service_type, date: "2023-11-09",time: "12:00 AM", duration: serv5.duration, cost: serv5.cost, location: loc3.name, user_id: user2.id, professional_id: pro8.id);
 # Appoinment.create(service_name: "", service_type: "", date_time: "", duration: "", location: "", user_id: "", specialist_id: "");
 
 puts "Appointments Seeded!"

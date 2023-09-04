@@ -1,15 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect} from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchLocations } from "./locationsSlice"
 import Location from "./Location"
+
 
 function LocationList() {
 
   const locations = useSelector((state) => state.locations.locations);
 
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchLocations());
-  // }, [dispatch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchLocations());
+  }, [dispatch]);
 
 
   const locationCard = locations.map((location) => (
