@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
     def update
         appointment = current_user.appointments.find_by(id: params[:id])
         if appointment
-            appointmnet.update(appointment_params);
+            appointment.update(appointment_params);
             render json: appointment
         else
             render json: {error: "You are not authorized"}, status: :unauthorized

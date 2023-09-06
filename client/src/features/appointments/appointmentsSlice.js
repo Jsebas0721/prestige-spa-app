@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 export const fetchAppointments = createAsyncThunk("appointments/fetchAppointments" , () =>{
     return fetch("/appointments")
     .then((resp) => resp.json())
-    .then(appointmnents => appointmnents)
+    .then((appointmnents) => appointmnents)
 })
 
 
@@ -18,6 +18,17 @@ const appointmentsSlice = createSlice({
         addAppointment(state, action){
             console.log(action.payload);
             state.appointmentList.push(action.payload);
+        },
+        updateAppointment(state, action){
+            console.log(action.payload)
+            const list = state.appointmentList.map((appointment) => {
+                if(appointment.id === action.payload.id){
+                    return action.payload
+                }else{
+                    return appointment
+                }
+            })
+            state.appointmentList = list
         }
 
     },
@@ -33,6 +44,6 @@ const appointmentsSlice = createSlice({
 
 });
 
-export const { setAppointments, addAppointment } = appointmentsSlice.actions;
+export const { addAppointment, updateAppointment } = appointmentsSlice.actions;
 export default appointmentsSlice.reducer;
 

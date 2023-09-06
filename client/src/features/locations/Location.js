@@ -2,7 +2,7 @@ import React from "react";
 
 function Location({location}){
 
-    console.log(location)
+    
     const{name, address, city, state, postal_code, country, phone} = location
     return (
         <div className="location-card">

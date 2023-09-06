@@ -17,9 +17,7 @@ function Profile(){
             {first_name && email ? (
                 <div>
                     {isUpdating ? (
-                        <UpdateProfile
-                            setIsUpdating={setIsUpdating}
-                        />
+                        <UpdateProfile setIsUpdating={setIsUpdating}/>
                     ):(
                         <div className="profile-container">
                             <h1>PROFILE</h1>

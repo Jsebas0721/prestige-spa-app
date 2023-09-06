@@ -31,9 +31,11 @@ function Services() {
   ));
 
   return (
-    <div className="service-container">
-      <h1>SERVICES</h1>
-      {serviceCard}
+    <div>
+      <h1>Know Our Services...</h1>
+      <div className="service-container">
+        {serviceCard}
+      </div>
     </div>
   );
 }

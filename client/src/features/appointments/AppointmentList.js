@@ -25,24 +25,15 @@ function AppointmentList(){
     return (
         <div className="appointment-container">
             <h1>Your Appointments:</h1>
-            {appointments !==  [] ? (
-                <table className="appointments-table">
-                <thead>
-                <tr>
-                    <th>Service Name</th>
-                    <th>Service Type</th>
-                    <th>Professional</th>
-                    <th>Duration</th>
-                    <th>Cost</th>
-                    <th>Date & Time</th>
-                    <th>Location</th>
-                </tr>
-                </thead>
+            <hr/>
+            {appointments !==  [] ? (  
+                <div className="appointments-list">
                 {appointment}
-                </table>
+                </div>
             ) : ( 
                 <h1>You don't have any appointments</h1>
             )}
+            <hr/>
             <button onClick={() => navigate("/appointments/new")} className="new-appointment-button">Book New Appointment</button>
         </div>
     )

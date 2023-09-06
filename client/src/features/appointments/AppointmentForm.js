@@ -41,7 +41,8 @@ function AppointmentForm() {
         resp.json().then((newAppointment) => {
           console.log(newAppointment)
           dispatch(addAppointment(newAppointment));
-          navigate("/appointments")
+          alert("Your Appointment has been schedule");
+          navigate("/appointments");
         });
       }else{
          resp.json().then((errorData) => setErrors(errorData.errors)); 
@@ -75,7 +76,6 @@ function AppointmentForm() {
 
   return (
     <form onSubmit={handleSubmit} className="appointment-form">
-
       <label>Service:</label>
       <select onChange={handleChange} id="service-name" name="service">
           <option value="" selected disabled hidden>Select Service</option>
@@ -111,6 +111,7 @@ function AppointmentForm() {
       />
       <label>Location:</label>
       <select onChange={handleChange} id="location-name" name="location">
+        <option value="" selected disabled hidden>Select Location</option>
         {locations.map((location) => (
           <option key={location.id} value={location.name}>{location.name}</option>
         ))}

@@ -19,6 +19,7 @@ import { fetchLocations } from './features/locations/locationsSlice';
 import { fetchProfessionals } from './features/professionals/professionalsSlice';
 import { fetchServices } from './features/services/servicesSlice';
 
+
 function App() {
   const user = useSelector((state) => state.users.user);
   const dispatch = useDispatch();
