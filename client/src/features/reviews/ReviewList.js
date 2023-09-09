@@ -18,6 +18,7 @@ function ReviewList(){
             <p className="reviews-professional-service-type">{service_type}</p>
             <div className="user-reviews">
                 <h1>Reviews:</h1>
+                <hr/>
                 <ul className="review-list">
                     {reviews.length !== 0 ?  reviewList : <p>No User Reviews...</p>}
                 </ul>

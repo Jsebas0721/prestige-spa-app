@@ -16,7 +16,7 @@ function NewReview({appointment, setIsLeavingReview}){
     const dispatch = useDispatch();
    
    
-    const {  professional_id} = appointment
+    const {  professional_id, professional} = appointment
     const [reviewData, setReviewData] = useState({
         comment: "",
         date: currentDate,
@@ -56,7 +56,7 @@ function NewReview({appointment, setIsLeavingReview}){
     }
     return (
         <div className="review-form">
-        <h1>Leave a Review for {}: </h1>
+        <h1>Leave a Review for {professional.name}: </h1>
         <form onSubmit={handleSubmitForm}>
             <label>Your Comment:</label>
             <textarea onChange={handleChange} id="comment" name="comment" rows="4" placeholder="Enter your review here..."></textarea>
