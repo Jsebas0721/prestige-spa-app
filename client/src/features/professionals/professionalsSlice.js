@@ -8,6 +8,7 @@ export const fetchProfessionals = createAsyncThunk("professionals/fetchProfessio
 
 const initialState= {
     professionals: [],
+    currentProfessional: null,
     status: "idle",
 }
 
@@ -15,6 +16,9 @@ const professionalsSlice = createSlice({
     name: "professionals",
     initialState,
     reducers: {
+        setProfessional(state, action){
+            state.currentProfessional = action.payload;
+        }
    
     },
     extraReducers: {
@@ -28,4 +32,5 @@ const professionalsSlice = createSlice({
     },
 });
 
+export const { setProfessional } = professionalsSlice.actions;
 export default professionalsSlice.reducer;

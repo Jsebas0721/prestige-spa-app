@@ -13,9 +13,9 @@ code {
 }
 
 .app-header {
-  font-family: 'Playfair Display', serif; 
   font-size: 2rem; 
   font-weight: bold;
+  font-style: italic;
   color: #336699; 
   text-align: center; 
   text-transform: uppercase; 
@@ -279,13 +279,12 @@ code {
 .service-title {
   font-size: 2rem;
   margin-right: 20px;
-  color: #336699; 
+  
 }
 
 
 .service-description {
   font-size: 1.5rem;
-
 }
 
 
@@ -321,21 +320,25 @@ code {
 }
 
 
+.services h1{
+  font-size: 2rem; 
+  font-weight: bold;
+  font-style: italic;
+  color: #336699; 
+  text-align: center; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  margin-top: 20px; 
+}
+
 .service-container {
- 
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #336699;
 }
 
-/* .service-container h1{
- 
-  font-size: 2rem;
-  margin-top: 0px;
-  margin-bottom: 20px;
-} */
 
-/* Styling for each service card */
 .service-card {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -392,10 +395,22 @@ code {
   background-color: #4897e6; 
 }
 
+.professionals h1 {
+  font-size: 2rem; 
+  font-weight: bold;
+  font-style: italic;
+  color: #336699; 
+  text-align: center; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  margin-top: 20px; 
+}
+
 .professionals-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 70px; 
+  gap: 40px; 
+  justify-content: space-evenly;
 }
 
 .professional-card {
@@ -448,11 +463,118 @@ code {
   background-color: #336699;
   color: white;
 }
+.professional-reviews-link {
+  text-align: center;
+  margin-top: 10px;
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
 
+.reviews-professional-info {
+  text-align: center;
+  padding: 20px;
+}
+
+.reviews-professional-details {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.reviews-professional-details img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-professional-name {
+  
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.reviews-professional-service-type {
+  color: #888;
+  font-weight: bold;
+}
+
+
+.user-reviews {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-reviews h1{
+  font-size: 2rem; 
+  font-weight: bold;
+  font-style: italic;
+  color: #336699; 
+  text-align: center; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  margin-top: 20px; 
+}
+
+
+.review-list {
+  list-style:none;
+  padding: 0;
+}
+
+.review {
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+.user-date {
+  text-align: right;
+}
+
+.user-name {
+  font-style: italic;
+  text-align: right;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.review-comment {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.review-date{
+  text-align: right;
+  margin-top: 5px;
+  font-size: 0.7rem;
+}
+
+
+.locations h1{
+  font-size: 2rem; 
+  font-weight: bold;
+  font-style: italic;
+  color: #336699; 
+  text-align: center; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  margin-top: 20px; 
+}
 
 .location-container {
- display:inline-flex;
-  gap: 170px;
+ display:flex;
+  gap: 5px;
+  justify-content: space-evenly;
   
 }
 
@@ -463,8 +585,7 @@ code {
   flex-direction: column;
   background-color: #f7f7f7;
   border: 1px solid #ddd;
-  margin-right: 90px;
-  padding: 60px;
+  padding: 25px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -489,6 +610,17 @@ code {
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   background-color: #336699;
   color: white;
+}
+
+.appointment-container h1{
+  font-size: 2rem; 
+  font-weight: bold;
+  font-style: italic;
+  color: #336699; 
+  text-align: center; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  margin-top: 20px; 
 }
 
 .appointment-container {
@@ -537,31 +669,26 @@ code {
   font-weight: bold;
 }
 
-.update-appointment-actions {
+.appointment-actions {
   display: flex;
-  justify-content: space-between;
+ justify-content: space-around;
 }
 
-.modify-button, .delete-button {
+.modify-button, .delete-button, .completed-button {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   border-radius: 3px;
 }
 
-.modify-button {
+.modify-button,.completed-button, .delete-button {
   background-color:#336699;
   color:white;
  
 }
 
-.delete-button {
-  background-color:#336699;
-  color: white;
 
-}
-
-.modify-button:hover, .delete-button:hover {
+.modify-button:hover, .delete-button:hover, .completed-button:hover {
   background-color: #4897e6; 
 }
 
@@ -592,9 +719,26 @@ code {
   padding: 20px;
   margin-bottom: 20px;
   display:block;
-  text-align: left;
+  
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.update-appointment-button{
+  
+  justify-content: space-evenly;
+}
+
+.save-button{
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #336699;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .new-appointment-button{
@@ -614,12 +758,15 @@ code {
 }
 
 .appointment-form {
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.appointment-form h1{
+  text-align: center;
 }
 
 .appointment-form label {
@@ -634,9 +781,11 @@ code {
 .appointment-form input[type="text"] {
   width: 100%;
   padding: 10px;
+  justify-content: space-around;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .button-container {
@@ -654,6 +803,53 @@ code {
 }
 
 .appointment-form button:hover {
+  background-color: #2980b9;
+}
+
+.review-form h1 {
+  font-size: 1.5rem;
+}
+.review-form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form elements */
+.review-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.review-form textarea,
+.review-form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Button styling */
+.button-container {
+  text-align: center;
+}
+
+.review-form button[type="submit"] {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color:#336699;
+  color: white;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.review-form button[type="submit"]:hover {
   background-color: #2980b9;
 }
 

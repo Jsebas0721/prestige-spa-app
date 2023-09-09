@@ -5,6 +5,7 @@ import servicesReducer from "./features/services/servicesSlice";
 import professionalsReducer from "./features/professionals/professionalsSlice";
 import locationsReducer from "./features/locations/locationsSlice";
 import appointmentsReducer from "./features/appointments/appointmentsSlice";
+import reviewsReducer from "./features/reviews/reviewsSlice";
 
 const store = configureStore({
     reducer: {
@@ -13,6 +14,7 @@ const store = configureStore({
       professionals: professionalsReducer,
       locations: locationsReducer,
       appointments: appointmentsReducer,
+      reviews: reviewsReducer,
     },
   });
 

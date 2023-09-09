@@ -18,10 +18,13 @@ import AppointmentForm from './features/appointments/AppointmentForm';
 import { fetchLocations } from './features/locations/locationsSlice';
 import { fetchProfessionals } from './features/professionals/professionalsSlice';
 import { fetchServices } from './features/services/servicesSlice';
+import ReviewList from './features/reviews/ReviewList';
+
 
 
 function App() {
   const user = useSelector((state) => state.users.user);
+  const professional = useSelector((state) => state.professionals.currentProfessional);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -46,6 +49,7 @@ function App() {
             <Route exact path={`/profile/${user.username}`} element={<Profile/>}/>
             <Route exact path="/services" element={<Services/>}/>
             <Route exact path="/professionals" element={<ProfessionalList/>}/>
+            {professional ? <Route exact path={`/professionals/${professional.name}/reviews`} element={<ReviewList/>}/> : null }
             <Route exact path='/locations' element={<LocationList/>}/>
             <Route exact path='/appointments' element={<AppointmentList/>}/>
             <Route exact path="/appointments/new" element={<AppointmentForm/>}/>

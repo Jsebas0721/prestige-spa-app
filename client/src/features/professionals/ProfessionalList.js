@@ -18,8 +18,9 @@ function ProfessionalList() {
     <Professional key={pro.id} professional={pro} />
   ));
   return (
-    <div>
+    <div className="professionals">
       <h1>Meet Our Professionals...</h1>
+      <hr/>
       <ul className="professionals-container">{profesionalCard}</ul>
     </div>
   );

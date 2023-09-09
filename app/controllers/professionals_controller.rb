@@ -2,6 +2,6 @@ class ProfessionalsController < ApplicationController
 
     def index
         professionals = Professional.all
-        render json: professionals
+        render json: professionals, include: ['reviews.user']
     end
 end

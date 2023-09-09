@@ -10,7 +10,8 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { service_name, service_type, duration, cost, professional_id, date, time, location } = appointment;
+  const { service_name, service_type, duration, cost, date, time, location, is_completed } = appointment;
+
 
   const [appointmentData, setAppointmentData] = useState({
     service_name: service_name,
@@ -20,17 +21,14 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
     date: date,
     time: time,
     location: location,
+    is_completed: is_completed,
   });
 
   const professionalList = professionals.filter(
     (pro) => pro.service_type === appointmentData.service_type
   );
 
-  const professional = professionals.map((pro) => {
-    if(pro.id === professional_id){
-        return pro.name
-    }
-  });
+ 
   function handleSubmit(e) {
     e.preventDefault();
     fetch(`/appointments/${appointment.id}`, {
@@ -93,7 +91,7 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
     </p>
     <p>Professional:
     <select onChange={handleChange} id="professional-name" name="professional_id">
-        <option value={professional} selected disabled hidden>{professional}</option>
+        <option value="" selected disabled hidden>Select Professional</option>
           {professionalList.map((pro) => (
             <option key={pro.id} value={pro.id}>{pro.name}</option>
           ))}
@@ -126,8 +124,8 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
       ))}
     </select> 
     </p> 
-    <div className="button-container">
-      <button type="submit">Schedule Appointment</button>
+    <div className="update-appointment-button">
+      <button type="submit" className="save-button">Save Changes</button>
     </div>
   </form>
   </div>

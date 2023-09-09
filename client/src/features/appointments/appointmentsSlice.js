@@ -16,18 +16,14 @@ const appointmentsSlice = createSlice({
     initialState,
     reducers: {
         addAppointment(state, action){
-            console.log(action.payload);
             state.appointmentList.push(action.payload);
         },
         updateAppointment(state, action){
-            console.log(action.payload)
-            const list = state.appointmentList.map((appointment) => {
-                if(appointment.id === action.payload.id){
-                    return action.payload
-                }else{
-                    return appointment
-                }
-            })
+          const list = state.appointmentList.map((appointment) => appointment.id === action.payload.id ? action.payload : appointment)
+          state.appointmentList = list;
+        }, 
+        deleteAppointment(state, action){
+            const list = state.appointmentList.filter((appointment) => appointment.id !== action.payload.id)
             state.appointmentList = list
         }
 
@@ -44,6 +40,6 @@ const appointmentsSlice = createSlice({
 
 });
 
-export const { addAppointment, updateAppointment } = appointmentsSlice.actions;
+export const { addAppointment, updateAppointment, deleteAppointment } = appointmentsSlice.actions;
 export default appointmentsSlice.reducer;
 

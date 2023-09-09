@@ -19,8 +19,9 @@ function LocationList() {
   ))
 
   return (
-    <div className="lol">
+    <div className="locations">
       <h1>Discover Our Locations..</h1>
+      <hr/>
       <ul className="location-container">{locationCard}</ul>
     </div>
   );

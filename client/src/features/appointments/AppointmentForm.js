@@ -18,12 +18,11 @@ function AppointmentForm() {
       date: "",
       time: "",
       location: "",
-      professional_id: null,
+      professional_id: "",
   })
-
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(appointmentData)
 
   const professionalList = professionals.filter((pro) => pro.service_type === appointmentData.service_type);
   
@@ -41,7 +40,7 @@ function AppointmentForm() {
         resp.json().then((newAppointment) => {
           console.log(newAppointment)
           dispatch(addAppointment(newAppointment));
-          alert("Your Appointment has been schedule");
+          alert("Your Appointment Has Been Scheduled");
           navigate("/appointments");
         });
       }else{
@@ -53,10 +52,8 @@ function AppointmentForm() {
   }
 
   function handleChange(e){
-   
     if(e.target.name === "service"){
       const service = services.find((service) => service.service_name === e.target.value);
-      console.log(service)
       setAppointmentData({
         ...appointmentData, 
           service_name: service.service_name,
@@ -76,6 +73,7 @@ function AppointmentForm() {
 
   return (
     <form onSubmit={handleSubmit} className="appointment-form">
+      <h1>New Appointment:</h1>
       <label>Service:</label>
       <select onChange={handleChange} id="service-name" name="service">
           <option value="" selected disabled hidden>Select Service</option>
@@ -97,7 +95,6 @@ function AppointmentForm() {
       <label>Date:</label>
       <input 
       onChange={handleChange} 
-     
       type="date" 
       id="date" 
       name="date" 

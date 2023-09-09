@@ -11,13 +11,13 @@ function AppointmentList(){
     const navigate = useNavigate();
     const appointments = useSelector((state) => state.appointments.appointmentList);
     const user = useSelector((state) => state.users.user);
-   
     useEffect(()=> {
         dispatch(fetchAppointments());
     },[dispatch])
     
-    
     const currentUserAppointments = appointments.filter((appointment) => appointment.user_id === user.id)
+    
+  
     
     const appointment = currentUserAppointments.map((appointment) => (
         <Appointment key={appointment.id} appointment={appointment}/>
@@ -26,13 +26,11 @@ function AppointmentList(){
         <div className="appointment-container">
             <h1>Your Appointments:</h1>
             <hr/>
-            {appointments !==  [] ? (  
+            {currentUserAppointments.length !== 0 ? (  
                 <div className="appointments-list">
                 {appointment}
                 </div>
-            ) : ( 
-                <h1>You don't have any appointments</h1>
-            )}
+            ) : <p>You don't have any Appointments...</p>}
             <hr/>
             <button onClick={() => navigate("/appointments/new")} className="new-appointment-button">Book New Appointment</button>
         </div>
