@@ -1,5 +1,5 @@
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector} from "react-redux";
 import Login from "./features/users/Login";
 import Signup from './features/users/Signup';
@@ -9,7 +9,7 @@ import UserNavBar from './features/users/UserNavBar';
 import Services from './features/services/Services';
 import Profile from './features/users/Profile';
 import { useEffect } from 'react';
-import { fetchMe } from './features/users/usersSlice';
+import { setUser } from './features/users/usersSlice';
 import Home from './Home';
 import ProfessionalList from './features/professionals/ProfessionalList';
 import LocationList from './features/locations/LocationList';
@@ -25,13 +25,22 @@ import ReviewList from './features/reviews/ReviewList';
 function App() {
   const professional = useSelector((state) => state.professionals.currentProfessional);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   
   useEffect(() => {
-    dispatch(fetchMe());
-    dispatch(fetchProfessionals());
-    dispatch(fetchServices());
-    dispatch(fetchLocations());
-  },[])
+    fetch("/me").then((resp) => {
+      if(resp.ok){
+        resp.json().then((user) => {
+          dispatch(setUser(user))
+          dispatch(fetchProfessionals());
+          dispatch(fetchServices());
+          dispatch(fetchLocations());
+        })
+      }else{
+        navigate("/");
+      }
+    });
+  },[dispatch, navigate])
   
   const user = useSelector((state) => state.users.user);
   console.log(user);
