@@ -36,8 +36,6 @@ function App() {
           dispatch(fetchServices());
           dispatch(fetchLocations());
         })
-      }else{
-        navigate("/");
       }
     });
   },[dispatch, navigate])
