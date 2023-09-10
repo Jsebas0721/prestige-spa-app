@@ -19,9 +19,10 @@ function UserNavBar() {
     fetch("/logout", { method: "DELETE" }).then((response) => {
       if (response.ok) {
         dispatch(userLogout(null));
-        navigate("/");
       }
     });
+
+    navigate("/")
   }
 
   return (

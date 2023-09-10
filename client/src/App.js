@@ -23,9 +23,10 @@ import ReviewList from './features/reviews/ReviewList';
 
 
 function App() {
+  const user = useSelector((state) => state.users.user);
   const professional = useSelector((state) => state.professionals.currentProfessional);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   
   useEffect(() => {
     fetch("/me").then((resp) => {
@@ -38,10 +39,9 @@ function App() {
         })
       }
     });
-  },[dispatch, navigate])
+  },[dispatch])
   
-  const user = useSelector((state) => state.users.user);
-  console.log(user);
+ 
   return (
     <div className="app">
       <Header/>

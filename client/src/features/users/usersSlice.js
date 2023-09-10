@@ -31,8 +31,8 @@ const usersSlice = createSlice({
         userLogin(state, action) {
             state.user = action.payload
         },
-        userLogout(state){
-            state.user = null;
+        userLogout(state, action){
+            state.user = action.payload;
         },
         userUpdate(state, action){
             state.user = action.payload
