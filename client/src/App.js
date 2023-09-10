@@ -23,10 +23,9 @@ import ReviewList from './features/reviews/ReviewList';
 
 
 function App() {
-  const user = useSelector((state) => state.users.user);
   const professional = useSelector((state) => state.professionals.currentProfessional);
   const dispatch = useDispatch();
-
+  
   useEffect(() => {
     dispatch(fetchMe());
     dispatch(fetchProfessionals());
@@ -34,8 +33,8 @@ function App() {
     dispatch(fetchLocations());
   },[dispatch])
   
- 
-
+  const user = useSelector((state) => state.users.user);
+  console.log(user);
   return (
     <div className="app">
       <Header/>
@@ -59,9 +58,9 @@ function App() {
         <div>
           <NavBar/>
           <Routes>
-            <Route exact path="/" element={<Home/>}/>
             <Route exact path="/login" element={<Login/>}/>
             <Route exact path="/signup" element={<Signup/>}/>
+            <Route exact path="/" element={<Home/>}/>
           </Routes>
         </div>
       )}
