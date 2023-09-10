@@ -31,7 +31,7 @@ function App() {
     dispatch(fetchProfessionals());
     dispatch(fetchServices());
     dispatch(fetchLocations());
-  },[dispatch])
+  },[])
   
   const user = useSelector((state) => state.users.user);
   console.log(user);

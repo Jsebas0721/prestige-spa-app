@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   before_action :authorized
   
   def authorized
-    return render json: { error: "Not authorized, Please Log In!" }, status: :unauthorized unless session.include? :user_id
+    return render json: { error: "Not authorized, Please Log In!" }, status: :unauthorized unless current_user
   end
 
   def permitted

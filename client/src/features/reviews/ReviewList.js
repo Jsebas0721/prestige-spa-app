@@ -17,7 +17,7 @@ function ReviewList(){
     return(
         <div className="reviews-professional-info" >
            <div className="reviews-professional-details">
-            <img src={picture} alt="Professional Image"/>
+            <img src={picture} alt="Professional"/>
             <h2 className="reviews-professional-name">{name}</h2>
             <p className="reviews-professional-service-type">{service_type}</p>
             <div className="user-reviews">
