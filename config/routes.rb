@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :appointments, only: [:index, :create, :update, :destroy]
 
   #reviews routes
-  resources :reviews, only: [:index, :create, :update, :destroy]
+  resources :reviews, only: [:index, :create,:destroy]
   
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

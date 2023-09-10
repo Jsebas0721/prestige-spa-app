@@ -31,7 +31,7 @@ function Appointment({ appointment}) {
         <UpdateAppointment appointment={appointment} setIsUpdating={setIsUpdating}/>
         ) : (
           <div className="appointment-card" >
-          {isLeavingReview ? <NewReview appointment={appointment} setIsLeavingReview={setIsLeavingReview}/> : 
+          {isLeavingReview ? <NewReview appointment={appointment}/> : 
           <div>
             <div className="appointment-info">
               <h2>{service_name}</h2>

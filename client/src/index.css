@@ -548,6 +548,10 @@ code {
   margin: 0;
 }
 
+.delete-review{
+  text-align: right;
+}
+
 .review-comment {
   margin-top: 5px;
   font-size: 0.9rem;
@@ -557,6 +561,18 @@ code {
   text-align: right;
   margin-top: 5px;
   font-size: 0.7rem;
+}
+
+.reviews-back-to-button{
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #336699;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 

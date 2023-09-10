@@ -18,6 +18,10 @@ const professionalsSlice = createSlice({
     reducers: {
         setProfessional(state, action){
             state.currentProfessional = action.payload;
+        },
+        deleteProfessionalReview(state, action){
+            const index = state.currentProfessional.reviews.findIndex((review) => review.id === action.payload)
+            state.currentProfessional.reviews.splice(index, 1);
         }
    
     },
@@ -32,5 +36,5 @@ const professionalsSlice = createSlice({
     },
 });
 
-export const { setProfessional } = professionalsSlice.actions;
+export const { setProfessional, deleteProfessionalReview } = professionalsSlice.actions;
 export default professionalsSlice.reducer;

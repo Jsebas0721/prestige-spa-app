@@ -4,7 +4,7 @@ import { addReview } from "./reviewsSlice";
 import { deleteAppointment } from "../appointments/appointmentsSlice";
 
 
-function NewReview({appointment, setIsLeavingReview}){
+function NewReview({appointment}){
 
     const today = new Date();
     const month = today.getMonth();
@@ -36,16 +36,16 @@ function NewReview({appointment, setIsLeavingReview}){
               resp.json().then((newReview) => {
                 console.log(newReview)
                 dispatch(addReview(newReview));
-                setIsLeavingReview(false);
+               
+                fetch(`/appointments/${appointment.id}`, {
+                    method: "DELETE",
+                  });
+                  dispatch(deleteAppointment(appointment))
               });
             }else{
                resp.json().then((errorData) => setErrors(errorData.errors)); 
             }
         })
-        fetch(`/appointments/${appointment.id}`, {
-            method: "DELETE",
-          });
-          dispatch(deleteAppointment(appointment))
     }
 
     function handleChange(e){

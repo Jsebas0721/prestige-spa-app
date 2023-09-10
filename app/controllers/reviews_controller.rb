@@ -14,16 +14,6 @@ class ReviewsController < ApplicationController
         end
     end
 
-    # def udpate
-    #     review = current_user.reviews.find_by(id: params[:id])
-    #     if review
-    #         review.update(review_params);
-    #         render json: review
-    #     else
-    #         render json: {error: "You are not authorized"}, status: :unauthorized
-    #     end    
-    # end
-
     def destroy
         review = Review.find_by(id: params[:id])
         if review
