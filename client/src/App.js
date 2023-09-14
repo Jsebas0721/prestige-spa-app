@@ -1,12 +1,12 @@
 
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import { useDispatch, useSelector} from "react-redux";
 import Login from "./features/users/Login";
 import Signup from './features/users/Signup';
 import Header from './Header';
 import NavBar from './NavBar';
 import UserNavBar from './features/users/UserNavBar';
-import Services from './features/services/Services';
+import Services from './features/services/ServiceList';
 import Profile from './features/users/Profile';
 import { useEffect } from 'react';
 import { setUser } from './features/users/usersSlice';
@@ -15,10 +15,8 @@ import ProfessionalList from './features/professionals/ProfessionalList';
 import LocationList from './features/locations/LocationList';
 import AppointmentList from './features/appointments/AppointmentList';
 import AppointmentForm from './features/appointments/AppointmentForm';
-import { fetchLocations } from './features/locations/locationsSlice';
-import { fetchProfessionals } from './features/professionals/professionalsSlice';
-import { fetchServices } from './features/services/servicesSlice';
 import ReviewList from './features/reviews/ReviewList';
+import { fetchServices } from './features/services/servicesSlice';
 
 
 
@@ -33,9 +31,7 @@ function App() {
       if(resp.ok){
         resp.json().then((user) => {
           dispatch(setUser(user))
-          dispatch(fetchProfessionals());
           dispatch(fetchServices());
-          dispatch(fetchLocations());
         })
       }
     });

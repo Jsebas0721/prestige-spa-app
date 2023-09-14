@@ -8,6 +8,7 @@ export const fetchServices = createAsyncThunk("services/fetchServices", () => {
 
 const initialState= {
     services: [],
+    selectedService: null,
     status: "idle",
 }
 
@@ -15,6 +16,9 @@ const servicesSlice = createSlice({
     name: "services",
     initialState,
     reducers: {
+        setService(state, action){
+            state.selectedService = action.payload
+        },
    
     },
     extraReducers: {
@@ -27,5 +31,7 @@ const servicesSlice = createSlice({
         },
     },
 });
+
+export const {setService} = servicesSlice.actions;
 
 export default servicesSlice.reducer;

@@ -4,6 +4,7 @@ import Appointment from "./Appointment"
 import {fetchAppointments} from "./appointmentsSlice"
 import {useNavigate} from "react-router-dom";
 import { useEffect } from "react";
+import { setService } from "../services/servicesSlice";
 
 function AppointmentList(){
 
@@ -13,6 +14,7 @@ function AppointmentList(){
     const user = useSelector((state) => state.users.user);
     useEffect(()=> {
         dispatch(fetchAppointments());
+        dispatch(setService(null))
     },[dispatch])
     
     const currentUserAppointments = appointments.filter((appointment) => appointment.user_id === user.id)

@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userUpdate } from "./usersSlice";
 
-
-
 function UpdateProfile({setIsUpdating}){
 
     const user = useSelector((state) => state.users.user);
