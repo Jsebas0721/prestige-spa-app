@@ -12,7 +12,7 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
   const dispatch = useDispatch();
   const { service_name, service_type, duration, cost, date, time, location, is_completed } = appointment;
 
-
+  const [errors, setErrors] = useState([]);
   const [appointmentData, setAppointmentData] = useState({
     service_name: service_name,
     service_type: service_type,
@@ -38,13 +38,17 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
       },
       body: JSON.stringify(appointmentData)
     })
-    .then((resp) => resp.json())
-    .then((updatedAppointment) => {
-        console.log(updatedAppointment)
-        dispatch(updateAppointment(updatedAppointment));
-        navigate("/appointments");
+    .then((resp) => {
+      if (resp.ok) {
+        resp.json().then((updatedAppointment) => {
+            dispatch(updateAppointment(updatedAppointment));
+            setIsUpdating(false);
+            navigate("/appointments");
+        });
+      } else {
+        resp.json().then((errorData) => setErrors(errorData.errors));
+      }
     });
-    setIsUpdating(false);
   }
 
   function handleChange(e) {
@@ -125,6 +129,13 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
     </select> 
     </p> 
     <div className="update-appointment-button">
+    {errors.length > 0 && (
+        <ul style={{ color: "red" }}>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+    )}
       <button type="submit" className="save-button">Save Changes</button>
     </div>
   </form>

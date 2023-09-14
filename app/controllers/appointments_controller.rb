@@ -18,7 +18,11 @@ class AppointmentsController < ApplicationController
         appointment = current_user.appointments.find_by(id: params[:id])
         if appointment
             appointment.update(appointment_params);
-            render json: appointment
+            if appointment.valid?
+                render json: appointment
+            else
+                render json: { errors: appointment.errors.full_messages}, status: :unprocessable_entity
+            end
         else
             render json: {error: "You are not authorized"}, status: :unauthorized
         end    
@@ -41,6 +45,6 @@ class AppointmentsController < ApplicationController
     private
 
     def appointment_params
-        params.permit(:service_name, :service_type, :duration, :date, :time, :cost, :location, :professional_id, :is_completed)
+        params.permit(:service_name, :service_type, :duration, :date, :time, :cost, :location, :professional_id)
     end
 end
