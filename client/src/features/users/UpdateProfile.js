@@ -5,15 +5,16 @@ import { userUpdate } from "./usersSlice";
 
 function UpdateProfile({setIsUpdating}){
 
+    const dispatch = useDispatch()
     const user = useSelector((state) => state.users.user);
     const {first_name, last_name, email, profile_picture} = user;
-    const dispatch = useDispatch()
     const [profileData, setProfileData] = useState({
         first_name: first_name,
         last_name: last_name,
         profile_picture: profile_picture,
         email: email
     })
+    
     
     function handleFormSubmit(e){
         e.preventDefault();

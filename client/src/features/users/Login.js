@@ -25,7 +25,6 @@ function Login(){
       }).then((resp) => {
         if (resp.ok) {
           resp.json().then((user) => {
-            console.log(user);
             dispatch(userLogin(user))
             navigate("/services");
           });    

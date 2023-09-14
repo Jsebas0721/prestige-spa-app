@@ -35,7 +35,7 @@ function Profile(){
                     )}
                 </div>
             ) : (
-                <div>
+                <div className="complete-profile-div">
                     <h1>COMPLETE PROFILE</h1>
                     <UpdateProfile  setIsUpdating={setIsUpdating}/>
                 </div>
