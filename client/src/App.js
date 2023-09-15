@@ -17,6 +17,7 @@ import AppointmentList from './features/appointments/AppointmentList';
 import AppointmentForm from './features/appointments/AppointmentForm';
 import ReviewList from './features/reviews/ReviewList';
 import { fetchServices } from './features/services/servicesSlice';
+import { fetchProfessionals } from './features/professionals/professionalsSlice';
 
 
 
@@ -32,6 +33,7 @@ function App() {
         resp.json().then((user) => {
           dispatch(setUser(user))
           dispatch(fetchServices());
+          dispatch(fetchProfessionals());
         })
       }
     });

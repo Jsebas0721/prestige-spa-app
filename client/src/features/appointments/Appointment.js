@@ -9,7 +9,7 @@ function Appointment({ appointment}) {
   const dispatch = useDispatch();
   const [isUpdating, setIsUpdating ] = useState(false);  
   const [isLeavingReview, setIsLeavingReview] = useState(false);
-  const { service_name, service_type, date, time, cost, location, duration, professional_id, is_completed } = appointment;
+  const { service_name, service_type, date, time, cost, location, duration, professional_id} = appointment;
 
   const professionals = useSelector((state) => state.professionals.professionals);
   const professional = professionals.map((pro) => pro.id === professional_id ? pro.name : null);
@@ -24,7 +24,7 @@ function Appointment({ appointment}) {
   }
 
   
-
+  
   return (
     <>
       {isUpdating ? (
@@ -43,13 +43,11 @@ function Appointment({ appointment}) {
               <p>Time: <span className="highlight">{time}</span></p>
               <p>Location: <span className="highlight">{location}</span></p>
             </div>
-            {is_completed ? null : (
-              <div className="appointment-actions">
-                <button className="completed-button" onClick={() => setIsLeavingReview((isLeavingReview) => !isLeavingReview)} >Complete</button>
-                <button className="modify-button" onClick={() => setIsUpdating((isUpdating) => !isUpdating)}>Modify</button>
-                <button className="delete-button" onClick={handleDeleteAppointment}>Cancel</button>
-              </div>
-            )}
+            <div className="appointment-actions">
+              <button className="completed-button" onClick={() => setIsLeavingReview((isLeavingReview) => !isLeavingReview)} >Complete</button>
+              <button className="modify-button" onClick={() => setIsUpdating((isUpdating) => !isUpdating)}>Modify</button>
+              <button className="delete-button" onClick={handleDeleteAppointment}>Cancel</button>
+            </div>
           </div>
           }
           

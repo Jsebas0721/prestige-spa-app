@@ -59,7 +59,7 @@ function AppointmentForm() {
       }
     });
   }
-
+  
   function handleChange(e) {
     if (e.target.name === "service") {
       const service = services.find(

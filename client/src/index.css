@@ -720,9 +720,17 @@ code {
 }
 
 .update-appointment-form{
-  display:flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  width: 275px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display:block;
+  text-align: left;
+  flex-direction: column;
+  justify-content: space-between;
 
 }
 
@@ -751,21 +759,22 @@ code {
   justify-content: center;
 }
 
-.update-appointment-button{
-  
-  justify-content: space-evenly;
+.update-appointment-actions{
+  display: flex;
+ justify-content: space-evenly;
 }
 
-.save-button{
-  margin-top: 10px;
+.save-button, .cancel-button{
   padding: 10px 20px;
-  background-color: #336699;
-  color: #fff;
+  border: none;
   cursor: pointer;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  border-radius: 3px;
+  background-color:#336699;
+  color:white;
+}
+
+.save-button:hover, .cancel-button:hover{
+  background-color: #4897e6; 
 }
 
 .new-appointment-button{

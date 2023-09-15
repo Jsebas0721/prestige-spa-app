@@ -10,7 +10,7 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { service_name, service_type, duration, cost, date, time, location, is_completed } = appointment;
+  const { service_name, service_type, duration, cost, date, time, location, professional} = appointment;
 
   const [errors, setErrors] = useState([]);
   const [appointmentData, setAppointmentData] = useState({
@@ -21,7 +21,6 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
     date: date,
     time: time,
     location: location,
-    is_completed: is_completed,
   });
 
   const professionalList = professionals.filter(
@@ -61,8 +60,8 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
           service_type: service.service_type,
           duration: service.duration,
           cost: service.cost,
-      
       })
+
     }else{
       setAppointmentData({
           ...appointmentData,
@@ -71,6 +70,11 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
     }
 
 
+  }
+
+  function handleClick(){
+    setIsUpdating(false);
+    navigate("/appointments");
   }
 
   return (
@@ -95,7 +99,7 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
     </p>
     <p>Professional:
     <select onChange={handleChange} id="professional-name" name="professional_id">
-        <option value="" selected disabled hidden>Select Professional</option>
+        <option value="" selected disabled hidden>{professional.name}</option>
           {professionalList.map((pro) => (
             <option key={pro.id} value={pro.id}>{pro.name}</option>
           ))}
@@ -128,7 +132,6 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
       ))}
     </select> 
     </p> 
-    <div className="update-appointment-button">
     {errors.length > 0 && (
         <ul style={{ color: "red" }}>
           {errors.map((error) => (
@@ -136,7 +139,9 @@ function UpdateAppointment({ appointment, setIsUpdating }) {
           ))}
         </ul>
     )}
+    <div className="update-appointment-actions">
       <button type="submit" className="save-button">Save Changes</button>
+      <button onClick={handleClick}className="cancel-button"> Cancel</button>
     </div>
   </form>
   </div>
