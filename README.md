@@ -44,7 +44,7 @@ For Production Enviroment:
 
 1.  Visit the following link to open the application:
 
-   [_https://car-finder-app.onrender.com_](https://prestige-spa-app.onrender.com)
+   [https://prestige-spa-app.onrender.com](https://prestige-spa-app.onrender.com)
 
 ## Contributing
 
