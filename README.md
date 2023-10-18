@@ -48,4 +48,4 @@ For Production Enviroment:
 
 ## Contributing
 
-Contributions and suggestions are always welcome, feel free to contact me at **sebastianlopez_21@hotmail.com** with any advice or code improvement ideas.
+Contributions and suggestions are always welcome, feel free to contact me at **jsemedina.21@gmail.com** with any advice or code improvement ideas.
