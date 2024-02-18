@@ -44,7 +44,7 @@ For Production Enviroment:
 
 1.  Visit the following link to open the application:
 
-   [https://prestige-spa-app.onrender.com](https://prestige-spa-app.onrender.com)
+   [https://prestige-spa-app-service.onrender.com](https://prestige-spa-app-service.onrender.com)
 
 ## Contributing
 
